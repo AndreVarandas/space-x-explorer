@@ -13,11 +13,7 @@ The challenge is to create a simple Ionic application to consume data from the a
 
 ## Current status
 
-<img src="extra/explorer-demo.gif"
-    style="max-width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;" alt="application preview" />
+<img src="extra/explorer-demo.gif" width="300" alt="application preview" />
 
 ---
 
