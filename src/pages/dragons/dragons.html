@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dragons</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let dragon of dragons" (click)="dragonTapped($event, dragon)">
+      <h2>{{dragon.name}}</h2>
+    </button>
+  </ion-list>
+</ion-content>

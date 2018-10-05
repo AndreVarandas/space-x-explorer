@@ -1,0 +1,7 @@
+{
+  "name": "spaceXExplorer",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

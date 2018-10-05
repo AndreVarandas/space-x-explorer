@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Cores</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let core of cores" (click)="coreTapped($event, core)">
+        <h2>{{core.core_serial}}</h2>
+        <p>
+          {{core.details}}
+        </p>
+      </button>
+    </ion-list>
+  </ion-content>

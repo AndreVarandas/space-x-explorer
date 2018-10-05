@@ -1,0 +1,68 @@
+<!--
+  Generated template for the DragonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dragon</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="dragon; else loading_page">
+    <!-- Common -->
+    <ion-card>
+      <ion-card-header>
+        {{ dragon.name }}
+      </ion-card-header>
+      <ion-card-content>
+        {{ dragon.description }}
+        <pre></pre>
+        <p>Diameter {{ dragon.diameter.meters }}</p>
+        <p>Type: {{ dragon.type }}</p>
+        <p>Active: {{ dragon.active }}</p>
+        <p>Crew capacity: {{ dragon.crew_capacity }}</p>
+        <pre></pre>
+        <p (click)="openWikipedia(dragon.wikipedia)">Wikipedia Info</p>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Heat Shield -->
+    <ion-card>
+      <ion-card-header>
+        Heat Shield
+      </ion-card-header>
+      <ion-card-content>
+        <p>Material: {{ dragon.heat_shield.material }}</p>
+        <p>Size: {{ dragon.heat_shield.size_meters }}</p>
+        <p>Temperature: {{ dragon.heat_shield.temp_degrees }}</p>
+        <p>Partner: {{ dragon.heat_shield.dev_partner }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Thrusters
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let thruster of dragon.thrusters">
+          <p>Type: {{ thruster.type }}</p>
+          <p>Ammount: {{ thruster.ammount }}</p>
+          <p>Pods: {{ thruster.pods }}</p>
+          <p>Fuel 1: {{ thruster.fuel_1 }}</p>
+          <p>Fuel 2: {{ thruster.fuel_2 }}</p>
+          <p>Thrust: {{ thruster.thrust.kN }} KN | {{ thruster.thrust.lbf }} lbf</p>
+          <pre></pre>
+
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #loading_page>
+    Loading...
+  </ng-template>
+</ion-content>
