@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { SpaceXProvider } from '../../providers/space-x/space-x';
 import { Core } from '../../models/Core';
-import { CorePage } from '../core/core';
 
 /**
  * Generated class for the CoresPage page.
@@ -10,6 +10,7 @@ import { CorePage } from '../core/core';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-cores',
   templateUrl: 'cores.html',
@@ -29,7 +30,7 @@ export class CoresPage {
   }
 
   coreTapped(event, core) {
-    this.navCtrl.push(CorePage, {
+    this.navCtrl.push('CorePage', {
       core: core
     });
   }

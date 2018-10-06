@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { Capsule } from '../../models/Capsule';
-import { DragonPage } from '../dragon/dragon';
 
 /**
  * Generated class for the CapsulePage page.
@@ -10,6 +10,7 @@ import { DragonPage } from '../dragon/dragon';
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
   selector: 'page-capsule',
   templateUrl: 'capsule.html',
@@ -29,7 +30,7 @@ export class CapsulePage {
   }
 
   dragonIdTapped(event, dragonId) {
-    this.navCtrl.push(DragonPage, {
+    this.navCtrl.push('DragonPage', {
       dragonId: dragonId
     })
   }

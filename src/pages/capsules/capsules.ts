@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Capsule } from '../../models/Capsule';
 import { SpaceXProvider } from '../../providers/space-x/space-x';
-import { CapsulePage } from '../capsule/capsule';
 
 /**
  * Generated class for the CapsulesPage page.
@@ -12,6 +11,7 @@ import { CapsulePage } from '../capsule/capsule';
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
   selector: 'page-capsules',
   templateUrl: 'capsules.html',
@@ -39,7 +39,7 @@ export class CapsulesPage {
   }
 
   capsuleTapped(event, capsule) {
-    this.navCtrl.push(CapsulePage, {
+    this.navCtrl.push('CapsulePage', {
       capsule: capsule
     });
   }

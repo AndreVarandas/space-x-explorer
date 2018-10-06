@@ -5,32 +5,18 @@ import { IonicStorageModule } from '@ionic/storage'
 import { CacheModule } from 'ionic-cache-observable'
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { CapsulesPage } from '../pages/capsules/capsules';
-import { CapsulePage } from '../pages/capsule/capsule';
-import { CoresPage } from '../pages/cores/cores';
-import { CorePage } from '../pages/core/core';
-import { DragonsPage } from '../pages/dragons/dragons';
-import { DragonPage } from '../pages/dragon/dragon';
-import { LaunchDetailPage } from '../pages/launch-detail/launch-detail';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SpaceXProvider } from '../providers/space-x/space-x';
 import { HttpModule } from '@angular/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+import { HomePage } from '../pages/home/home';
+import { SpaceXProvider } from '../providers/space-x/space-x';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CapsulesPage,
-    CapsulePage,
-    CoresPage,
-    CorePage,
-    DragonsPage,
-    DragonPage,
-    LaunchDetailPage,
   ],
   imports: [
     HttpModule,
@@ -43,13 +29,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   entryComponents: [
     MyApp,
     HomePage,
-    CapsulesPage,
-    CapsulePage,
-    CoresPage,
-    CorePage,
-    DragonsPage,
-    DragonPage,
-    LaunchDetailPage
   ],
   providers: [
     StatusBar,
@@ -59,4 +38,5 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     InAppBrowser,
   ]
 })
+
 export class AppModule {}

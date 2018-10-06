@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Launch } from '../../models/Launch';
 
 /**
@@ -8,6 +8,8 @@ import { Launch } from '../../models/Launch';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
+@IonicPage()
 @Component({
   selector: 'page-launch-detail',
   templateUrl: 'launch-detail.html',

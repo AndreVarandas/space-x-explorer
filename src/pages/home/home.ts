@@ -4,7 +4,6 @@ import { Cache } from 'ionic-cache-observable';
 
 import { SpaceXProvider } from '../../providers/space-x/space-x';
 import { Launch } from '../../models/Launch';
-import { LaunchDetailPage } from '../launch-detail/launch-detail';
 import { CacheService } from 'ionic-cache-observable';
 import { Observable } from 'rxjs/Observable';
 
@@ -33,7 +32,7 @@ export class HomePage {
   }
 
   launchTapped(event, launch) {
-    this.navCtrl.push(LaunchDetailPage, {
+    this.navCtrl.push('LaunchDetailPage', {
       launch: launch
     });
   }
