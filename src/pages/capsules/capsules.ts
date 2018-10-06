@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Capsule } from '../../models/Capsule';
 import { SpaceXProvider } from '../../providers/space-x/space-x';
@@ -12,7 +12,6 @@ import { CapsulePage } from '../capsule/capsule';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-capsules',
   templateUrl: 'capsules.html',
