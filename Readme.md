@@ -19,7 +19,24 @@ The challenge is to create a simple Ionic application to consume data from the a
 - Did some code cleanup. Removed all component.ts files. But in that way I would be unable to use lazy loading. See [Ionic 3 Lazy-loading](https://wannabeegeek.com/2017/06/01/ionic-3-lazyloading-page-navigation/). Reverted all the changes, and removed imports from app.component.ts that referenced Pages that already had a module.ts. Now, all pages components are lazy loaded.
 - I also spent some time on how to manually zipalign and sign an apk. I'm writing the required steps below.
 
-## Building apk
+## Day three
+
+- Finally finished automatic builds on travis CI. Travis CI is now able to successfully generate apk's from source.
+- Cleaned up `.travis.yml` file.
+- Created a new basic page to show upcoming launches, added a new method to `space-x.ts` provider.
+- Bumped app version to `v0.0.2`.
+
+## Current status - Day three
+
+Added future launches screen.
+
+<img src="extra/day-3.gif" width="300" alt="application preview" />
+
+---
+
+## Some Notes
+
+### Building apk
 
 ```bash
 # apk is generated at platforms/android/app/build/outputs/apk/release
@@ -27,7 +44,7 @@ The challenge is to create a simple Ionic application to consume data from the a
 ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
 ```
 
-## Zipalign the unsigned apk
+### Zipalign the unsigned apk
 
 ```bash
 # Input app-relase-unsigned.apk and outputs app-relase-unsigned-aligned.apk
@@ -35,7 +52,7 @@ ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
 zipalign -f -p 4 app-release-unsigned.apk app-relase-unsigned-aligned.apk
  ```
 
-## Sign the aligned apk
+### Sign the aligned apk
 
 ```bash
 # Note --ks points to the keystore file. You will be prompted for credentials.
@@ -43,19 +60,13 @@ zipalign -f -p 4 app-release-unsigned.apk app-relase-unsigned-aligned.apk
 apksigner sign --ks ~/Documents/spacexstore --out app-release.apk app-relase-unsigned-aligned.apk
 ```
 
-## zipalign and apksigner not found
+### zipalign and apksigner not found
 
 ```bash
 # Just replace the 27.0.3 with the desired version
 
 echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/27.0.3/" >> ~/.zshrc && . ~/.zshrc
 ```
-
-## Current status - Day two
-
-No changes.
-
-<img src="extra/explorer-demo.gif" width="300" alt="application preview" />
 
 ---
 
