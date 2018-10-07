@@ -1,46 +1,52 @@
-matrix:
-  include:
-  - os: linux
-    sudo: false
-    language: android
-    android:
-      components:
-      - tools
-      - platform-tools
-      - build-tools-26.0.2
-      - android-27
-      - extra-google-google_play_services
-      - extra-google-m2repository
-      - extra-android-m2repository
-    addons:
-      apt:
-        sources:
-        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
-          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
-        packages:
-        - oracle-java8-installer
-        - oracle-java8-set-default
-        - npm
-    licenses:
-    - android-sdk-preview-license-.+
-    - android-sdk-license-.+
-    - google-gdk-license-.+
-cache:
-  directories:
-  - "$HOME/.gradle/caches/"
-  - "$HOME/.gradle/wrapper/"
-  - "$HOME/Library/Caches/npm/"
-  - "$HOME/.cache/npm/"
-before_install:
-- yes | sdkmanager "platforms;android-26"
-- nvm install 8
-- npm i -g ionic cordova
-script:
-- npm i
-- ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
+language: android
+
+sudo: false
+
 env:
   global:
-  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
+    - ANDROID_API=27
+    - ANDROID_BUILD_TOOLS=26.0.2
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-$ANDROID_BUILD_TOOLS
+    - android-$ANDROID_API
+    - extra-android-support
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+
+before_install:
+  - yes | sdkmanager "platforms;android-$ANDROID_API"
+  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS"
+  # - curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+  # - sudo apt-get install nodejs
+  # - sudo apt-get install build-essential
+  - nvm install 8
+  - npm i -g ionic cordova
+
+jdk:
+  - oraclejdk8
+
+script:
+  - npm i
+  - ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - "$HOME/.android/build-cache"
+    - "$HOME/.m2"
+    - "$HOME/.gradle"
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+    - "$HOME/Library/Caches/npm/"
+    - "$HOME/.cache/npm/"
 
 deploy:
   provider: releases
