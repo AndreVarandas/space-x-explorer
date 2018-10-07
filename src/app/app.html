@@ -1,12 +1,13 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <ion-content>
-    <ion-list>
+    <div class="drawer-background">
+      <div class="drawer-background-content" padding>
+        <div class="drawer-title">Space X Explorer</div>
+        <div class="drawer-subtitle">Advanced Rockets and Spacecraft</div>
+      </div>
+    </div>
+    <ion-list no-lines>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>

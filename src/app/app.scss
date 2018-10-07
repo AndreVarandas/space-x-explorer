@@ -29,3 +29,28 @@
 .card-content-wp {
     color: #b1b1b1
 }
+
+.drawer-background {
+
+    display: flex;
+    min-height: 200px;
+    background-image: url(../assets/imgs/placeholder.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .drawer-background-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .drawer-title {
+            font-size: 1.85rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .drawer-subtitle {
+            font-weight: 100;
+            color: #b1b1b1;
+        }
+    }
+}
