@@ -41,6 +41,11 @@ export class SpaceXProvider {
       .pipe(map((resp: Response) => <Launch[]>resp.json()));
   }
 
+  getUpcomingLaunches(): Observable<Launch[]> {
+    return this.http.get(this.BASE_URL + 'launches/upcoming')
+      .pipe(map((resp: Response) => <Launch[]>resp.json()));
+  }
+
   getMissions(): Observable<Mission[]> {
     return this.http.get(this.BASE_URL + 'missions')
       .pipe(map((resp: Response) => <Mission[]>resp.json()));

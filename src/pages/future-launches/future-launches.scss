@@ -1,0 +1,29 @@
+page-future-launches {
+
+}
+
+.card-background-page {
+
+    .card-header {
+      position: absolute;
+      top: 15%;
+      font-size: 2rem;
+      line-height: 1.5;
+      width: 100%;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+
+      button {
+        margin-top: 2rem;
+      }
+    }
+
+}
