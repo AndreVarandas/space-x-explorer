@@ -8,6 +8,7 @@ import { Core } from '../../models/Core';
 import { Dragon } from '../../models/Dragon';
 import { Mission } from '../../models/Mission';
 import { Launch } from '../../models/Launch';
+import { HistoryEvent } from '../../models/HistoryEvent';
 
 @Injectable()
 export class SpaceXProvider {
@@ -49,6 +50,11 @@ export class SpaceXProvider {
   getMissions(): Observable<Mission[]> {
     return this.http.get(this.BASE_URL + 'missions')
       .pipe(map((resp: Response) => <Mission[]>resp.json()));
+  }
+
+  getHistoryEvents(): Observable<HistoryEvent[]> {
+    return this.http.get(this.BASE_URL + 'history')
+      .pipe(map((resp: Response) => <HistoryEvent[]>resp.json()));
   }
 
 }
