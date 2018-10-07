@@ -12,7 +12,6 @@ matrix:
       - extra-google-google_play_services
       - extra-google-m2repository
       - extra-android-m2repository
-
     addons:
       apt:
         sources:
@@ -22,28 +21,23 @@ matrix:
         - oracle-java8-installer
         - oracle-java8-set-default
         - npm
-
     licenses:
     - android-sdk-preview-license-.+
     - android-sdk-license-.+
     - google-gdk-license-.+
-
 cache:
   directories:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
   - "$HOME/Library/Caches/npm/"
   - "$HOME/.cache/npm/"
-
 before_install:
 - yes | sdkmanager "platforms;android-26"
 - nvm install 8
 - npm i -g ionic cordova
-
 script:
 - npm i
 - ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
-
 env:
   global:
   - JAVA_HOME=/usr/lib/jvm/java-8-oracle
@@ -53,7 +47,7 @@ deploy:
   skip_cleanup: true
   overwrite: true
   api_key:
-    secure: CyjUZQJRBYcPTjOrEuTn983HMT85HGzB7GbTkkUyEqtc51FgfyxL/L9EXeK22/xAgWpE81r0l1GLxUcNC3ERvvvAsSJ7ksyCIn1AhKyVxyHsvBtbFMshLrbHc6925O74awIFVKfuJBB44kFB73FhgZfLqicv4J0xEb2elF2zA6VEk3iUrk5peHFTfpEstEjQWnSKZlCcO5qrRAScBXgZcwyVFp/QguhIruJKEWogPnVM8Uv9Z8L6l2aaiYgZBrUgzyY1vJJqBsCbmQgrGAb0PE+kRx7rj/OGV/L+B8vVaF2VRAUsFrbXbk+8+h+KvO/wpIGQ6nChNT6k6Scw839YHiEoCHwR5b4R/PJjtGLHmqGcQPz3zaDADnDaN88XLt62fYUf8Z/Lpbkk3sgscd4QDX0Cdyob6C9scU/iXKeB8sq/ZinG+kEsaDnk0Z27kS6ETCBDw5V8BjtBU7DvV80iN3E0gg5J0UUluK6PuFWqi4tUL205TxtZLX9WnpR1B4Q2NkIalw2LSFgL06Pt2/Fv+d45rPH38yoHCFia7x3o1hqi2r+FuhAvJxhP384cWPoUTH61SThTvlvFY+DRz6BV0sbi/sNJr8MlXHwlMirjrP5tjokStfpAlCpx+0xP7Ys0tcxWjCo3sPalZCpJHyUWd3qJC1gCzqZeJaE+W0mKVkU=
+    secure: kPG5TmVdc6isVaE+gZK++CivoW5oWb0sV5JW3425JXM7o/rr7BrrM/Le4cObkuLu1EJyqYwBBScyUi+/uM7HmV40GGl2eurUU4Gtf5nk6mxv93B+ncS5RbNGSa6bYno8gPC9VoyqZDpjgjCEgrh91m1vLQ4FMC9Q4wlbKOd8hoUVovtMTqoEAR+cNtr8jeGinYOjuUAVsY/6nqNoNDA+CEexrzXM9wPALy4GCo+2noBXlZJns7PG1kOU5SDRRn5lgo4zM8MeK9vfqUqbuemvDNATgs97xdlxo6VvCSigjRgx0GbnBTPET7gs2S+3z5TUqDgwCT6acB0fF2vASc63tTMZlqoKjI+iW8IDvt+GqusM7YTf7pctqASMSxNg6qahqj/opvYsjY8qcD9NdlYLz2t5BHr83mgJgfRKVmoe5qMrhft1kd2FyxzjnTfcRjAj9eQZYrdlnySS6Uc8X7L37BZ/0qjLnxaw+bITY+pyWjzbxjiGzfeAVDH62v9SXGRp6mVhtUZOVHkhaGC0XVpLNxqyK0YcD68Gevu6myUHLG12Sw0hxQ72RHdKqTqa/UnFgl7P41bigvwzuwnSE3DPbVNJtIDhHoqWPeauitdy3R6HSjnh0GGV9mdAjg8pSgdXlkau7Bq+Zd3nfolup9bZW44R1FdX7J7aVtYQAo3LfzE=
   file: "/home/travis/build/AndreVarandas/space-x-explorer/platforms/android/build/outputs/apk/release/*"
   on:
     repo: AndreVarandas/space-x-explorer
