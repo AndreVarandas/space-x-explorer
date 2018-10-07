@@ -1,7 +1,6 @@
 branches:
   only:
   - master
-  - /^v\\d+\\.\\d+\\.\\d+$/
 
 matrix:
   include:
@@ -63,3 +62,4 @@ deploy:
   on:
     repo: AndreVarandas/space-x-explorer
     tags: true
+    all_branches: true
