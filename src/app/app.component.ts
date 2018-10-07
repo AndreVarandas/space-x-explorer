@@ -23,7 +23,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Capsules', component: 'CapsulesPage' },
       { title: 'Cores', component: 'CoresPage' },
-      { title: 'Dragons', component: 'DragonsPage' }
+      { title: 'Dragons', component: 'DragonsPage' },
+      { title: 'Upcoming Launches', component: 'FutureLaunchesPage' },
     ];
 
   }
