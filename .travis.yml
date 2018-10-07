@@ -48,7 +48,7 @@ deploy:
   overwrite: true
   api_key:
     secure: ay5O9+SdiBtDhuSS1J9k5lzz0dJvsC+mPRYHyBX1N75IvnHy4xk1O7VeFyfFc+Z5RP6UFeXNI+jIICfzEUBWuufYhu/prqUNOZOCCDY34dbMXeXLARjoYUoOb6Xpn8V6SlvmLqC54dwNGbzQ6rNvJPEvsK1TIPbFNeycX4gK87jTNEYX4VPFRLQNI6DMWSamEb5YsfznwrSOR/N6WhAig6iplUPXym90GL6clOKFAutgTAUcTgMq59Wpr3uqxgQSPhzAEqISC3wQPUSh1t7qmPfKKhWupUU5ddyamzK8NCZSckKTv1f10CoMJn+nFEnKwIAt72E7aMy1iwcMWdgNge/wc5sJVOqODmrlY7xMfdj0PCwEZNoxpgztbrD3QyVfYFmPzp94feXJU0UqdXhJ5qZDhJGrYvfw5gzSz5/YGMGY5LQ1oM1hOtvanTOR/P4u7IHj97uOf+Pqc1fvc7WEIwFSrfAuVE5UzDacBq+vsnO6v4SaD2CR14BdFgvXIWSFMqP2k8TSZLZggg+b1tWHbk9xrI/XnsF6DZUxRHkd6B8YMca8pNueeQGF0Vo2hMXysOlLx/pNb213C93tQcVYHtxZ5o5HxiueU999jKZEecewQbXRYkXC8C9+V2U59D0HwhxibDpoqQeCQycUYRRkymakZz5lO/d6V2YPYkRrfQg=
-  file: "/home/travis/build/AndreVarandas/space-x-explorer/platforms/android/build/outputs/apk/release/*"
+  file: "/home/travis/build/AndreVarandas/space-x-explorer/platforms/android/app/build/outputs/apk/release/*"
   on:
     repo: AndreVarandas/space-x-explorer
     tags: true
