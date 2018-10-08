@@ -9,6 +9,7 @@ import { Dragon } from '../../models/Dragon';
 import { Mission } from '../../models/Mission';
 import { Launch } from '../../models/Launch';
 import { HistoryEvent } from '../../models/HistoryEvent';
+import { Launchpad } from '../../models/Launchpad';
 
 @Injectable()
 export class SpaceXProvider {
@@ -55,6 +56,16 @@ export class SpaceXProvider {
   getHistoryEvents(): Observable<HistoryEvent[]> {
     return this.http.get(this.BASE_URL + 'history')
       .pipe(map((resp: Response) => <HistoryEvent[]>resp.json()));
+  }
+
+  getLaunchpads(): Observable<Launchpad[]> {
+    return this.http.get(this.BASE_URL + 'launchpads')
+      .pipe(map((resp: Response) => <Launchpad[]>resp.json()));
+  }
+
+  getLunchPad(id: string): Observable<Launchpad> {
+    return this.http.get(this.BASE_URL + 'launchpads/' + id)
+      .pipe(map((resp: Response) => <Launchpad>resp.json()));
   }
 
 }

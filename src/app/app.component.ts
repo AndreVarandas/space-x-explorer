@@ -26,6 +26,7 @@ export class MyApp {
       { title: 'Dragons', component: 'DragonsPage' },
       { title: 'Upcoming Launches', component: 'FutureLaunchesPage' },
       { title: 'History Events', component: 'HistoryPage' },
+      { title: 'Launchpads', component: 'LaunchPadsPage' },
     ];
 
   }
