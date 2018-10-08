@@ -20,10 +20,16 @@ page-future-launches {
       width: 100%;
       text-align: center;
       color: #ffffff;
+      font-size: smaller;
 
       button {
         margin-top: 2rem;
       }
     }
 
+}
+
+p.future-launch-subtitle {
+  font-size: 10px;
+  margin: 5px 0;
 }
