@@ -9,9 +9,11 @@
 
 
 <ion-content>
-  <ion-list>
+  <ion-list no-lines>
     <button ion-item *ngFor="let dragon of dragons" (click)="dragonTapped($event, dragon)">
       <h2>{{dragon.name}}</h2>
+      <p item-end *ngIf="dragon.active">Active</p>
+      <p item-end *ngIf="!dragon.active">Inactive</p>
     </button>
   </ion-list>
 </ion-content>

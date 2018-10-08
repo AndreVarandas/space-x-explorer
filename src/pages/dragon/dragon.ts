@@ -4,7 +4,7 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 
 import { Dragon } from '../../models/Dragon';
 import { SpaceXProvider } from '../../providers/space-x/space-x';
-
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the DragonPage page.
@@ -43,6 +43,11 @@ export class DragonPage {
           this.dragon = dragon
           loader.dismiss();
         });
+    }
+
+    if (!this.dragon && !this.dragonId) {
+      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.popToRoot();
     }
 
   }
