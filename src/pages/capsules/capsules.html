@@ -17,8 +17,10 @@
   <ion-searchbar (ionInput)="onSearchBarInput($event)"></ion-searchbar>
   <ion-list no-lines>
     <button ion-item *ngFor="let capsule of searchableCapsules" (click)="capsuleTapped($event, capsule)">
-      <h2>{{capsule.capsule_serial}} - {{ capsule.capsule_id }}</h2>
-      <p item-end>{{ capsule.status }}</p>
+      <h2>{{ capsule.capsule_serial }} - {{ capsule.capsule_id | titlecase }}</h2>
+      <p class="capsule-status" [ngClass]="{ 'active' : capsule.status === 'active', 'inactive' : capsule.status !== 'active' }" item-end>
+        {{ capsule.status | titlecase }}
+      </p>
       <p>{{capsule.details}}</p>
     </button>
 

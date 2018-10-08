@@ -12,7 +12,7 @@
     <ion-list no-lines>
       <button ion-item *ngFor="let core of searchableCores" (click)="coreTapped($event, core)">
         <h2>{{core.core_serial}}</h2>
-        <p item-end>{{ core.status }}</p>
+        <p class="cores-status"  [ngClass]="{ 'active' : core.status === 'active', 'inactive' : core.status !== 'active' }" item-end>{{ core.status | titlecase }}</p>
         <p>{{ core.original_launch | date: 'dd/MM/yyyy' }}</p>
         <p>{{core.details}}</p>
       </button>

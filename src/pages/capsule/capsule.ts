@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Capsule } from '../../models/Capsule';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CapsulePage page.
@@ -23,10 +24,11 @@ export class CapsulePage {
 
     this.capsule = navParams.get('capsule');
 
-  }
+    if (!this.capsule) {
+      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.popToRoot();
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CapsulePage');
   }
 
   dragonIdTapped(event, dragonId) {
@@ -36,3 +38,4 @@ export class CapsulePage {
   }
 
 }
+
