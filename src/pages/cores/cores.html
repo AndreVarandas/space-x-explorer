@@ -8,12 +8,13 @@
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let core of cores" (click)="coreTapped($event, core)">
+    <ion-searchbar (ionInput)="onSearchBarInput($event)"></ion-searchbar>
+    <ion-list no-lines>
+      <button ion-item *ngFor="let core of searchableCores" (click)="coreTapped($event, core)">
         <h2>{{core.core_serial}}</h2>
-        <p>
-          {{core.details}}
-        </p>
+        <p item-end>{{ core.status }}</p>
+        <p>{{ core.original_launch | date: 'dd/MM/yyyy' }}</p>
+        <p>{{core.details}}</p>
       </button>
     </ion-list>
   </ion-content>

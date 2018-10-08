@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
+import { CacheService, Cache } from 'ionic-cache-observable';
 
 import { Capsule } from '../../models/Capsule';
 import { SpaceXProvider } from '../../providers/space-x/space-x';
@@ -18,24 +20,22 @@ import { SpaceXProvider } from '../../providers/space-x/space-x';
 })
 export class CapsulesPage {
 
-  capsules: Array<Capsule>
+  capsules: Array<Capsule>;
+  searchableCapsules: Array<Capsule>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private spaceXProvider: SpaceXProvider) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private spaceXProvider: SpaceXProvider,
+    private cacheService: CacheService) {
 
-    this.getCapsules();
-
-  }
-
-  async getCapsules() {
-    this.spaceXProvider.getCapsules()
+    const capsulesObservable: Observable<Capsule[]> = this.spaceXProvider.getCapsules();
+    this.cacheService.register('capsules', capsulesObservable)
+      .mergeMap((cache: Cache<Capsule[]>) => cache.get())
       .subscribe((capsules) => {
         this.capsules = capsules;
-        console.log(this.capsules);
+        this.searchableCapsules = this.capsules;
       });
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CapsulesPage');
   }
 
   capsuleTapped(event, capsule) {
@@ -45,17 +45,14 @@ export class CapsulesPage {
   }
 
   onSearchBarInput(event) {
-    // TODO: Cache the capsules result. Use the cached ones to filter.
-    // As the getCapsules is async, the filter is always applied first, and
-    // we cant call this.getCapsules() here.
 
+    this.searchableCapsules = this.capsules;
     const value = event.target.value;
+
     if (value && value.trim() !== '') {
-      this.capsules = this.capsules.filter(capsule => {
+      this.searchableCapsules = this.capsules.filter(capsule => {
         return (capsule.capsule_serial.toLocaleLowerCase().indexOf(value.toLocaleLowerCase()) > -1);
       });
-    } else {
-      this.getCapsules();
     }
   }
 

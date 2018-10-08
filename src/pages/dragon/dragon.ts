@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 import { Dragon } from '../../models/Dragon';
 import { SpaceXProvider } from '../../providers/space-x/space-x';
+
 
 /**
  * Generated class for the DragonPage page.
@@ -25,20 +26,25 @@ export class DragonPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private iab: InAppBrowser,
-    private spaceXProvider: SpaceXProvider) {
+    private spaceXProvider: SpaceXProvider,
+    private loadingCtrl: LoadingController) {
+
+    const loader = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
 
     this.dragonId = this.navParams.get('dragonId') || null;
     this.dragon = this.navParams.get('dragon') || null;
 
     if (this.dragonId) {
+      loader.present();
       this.spaceXProvider.getDragon(this.dragonId)
-        .subscribe(dragon => this.dragon = dragon);
+        .subscribe(dragon => {
+          this.dragon = dragon
+          loader.dismiss();
+        });
     }
 
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DragonPage');
   }
 
   openWikipedia(url) {
