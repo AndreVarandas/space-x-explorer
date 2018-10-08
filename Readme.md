@@ -25,6 +25,9 @@ The challenge is to create a simple Ionic application to consume data from the a
 - Cleaned up `.travis.yml` file.
 - Created a new basic page to show upcoming launches, added a new method to `space-x.ts` provider.
 - Bumped app version to `v0.0.2`.
+- Added Historic events list.
+- Created an app and splash icon. This was easily done with `ionic cordova resources`. The cli will look for an icon and splash image in the `assets` folder and automatically generates resources for android and iOS.
+- Added caching for `core`, `capsules` and `dragons`.
 
 ## Current status - Day three
 
