@@ -27,6 +27,7 @@ export class MyApp {
       { title: 'Upcoming Launches', component: 'FutureLaunchesPage' },
       { title: 'History Events', component: 'HistoryPage' },
       { title: 'Launchpads', component: 'LaunchPadsPage' },
+      { title: 'Rockets', component: 'RocketPage' },
     ];
 
   }

@@ -1,0 +1,32 @@
+<!--
+  Generated template for the RocketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rockets</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+    <button
+      ion-item
+      (click)="onRocketTap($event, rocket)"
+      *ngFor="let rocket of rockets">
+        <h3>{{ rocket.rocket_name }}</h3>
+        <p item-end *ngIf="rocket.active">Active</p>
+        <p item-end *ngIf="!rocket.active">Inactive</p>
+    </button>
+  </ion-list>
+
+</ion-content>

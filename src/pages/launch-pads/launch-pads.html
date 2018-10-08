@@ -17,14 +17,13 @@
 
 <ion-content padding>
 
-
-
-
   <ion-card *ngFor="let launchpad of launchpads">
     <ion-card-header>
       {{ launchpad.location.name }} - {{ launchpad.location.region }}
       <div class="launchpad-card-subtitle">
-        {{ launchpad.status }} - (Lat: {{ launchpad.location.latitude }}, Lng: {{ launchpad.location.longitude }})
+        {{ launchpad.status }}
+        <br>
+        (Lat: {{ launchpad.location.latitude }}, Lng: {{ launchpad.location.longitude }})
       </div>
     </ion-card-header>
     <ion-card-content>
@@ -37,6 +36,5 @@
 
     </ion-card-content>
   </ion-card>
-
 
 </ion-content>
