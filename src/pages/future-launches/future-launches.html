@@ -19,7 +19,7 @@
   <div *ngIf="upcomingLaunch" class="card-background-page">
 
     <ion-card>
-      <img class="background-image" src="../../assets/imgs/placeholder.jpeg"/>
+      <img class="background-image" src="../../assets/imgs/placeholder.jpeg" />
       <ion-card-header>
         Upcoming Launch
         <br>
@@ -36,12 +36,17 @@
 
   </div>
 
-  <ion-list no-lines>
-    <ion-item *ngFor="let launch of upcomingLaunches">
-      <h2>{{ launch.mission_name }}</h2>
-      <div item-end>{{ launch.launch_date_utc | date: 'dd/MM/yy @ h:mma' }}</div>
+  <ion-card *ngFor="let launch of upcomingLaunches">
+    <ion-card-header>
+      {{ launch.mission_name }}
+      <br>
+      <p class="future-launch-subtitle">
+        {{ launch.launch_date_utc | date: 'dd/MM/yy @ h:mma' }}
+      </p>
+    </ion-card-header>
+    <ion-card-content>
       <p>{{ launch.rocket.rocket_name }} - {{ launch.launch_site.site_name_long }}</p>
-    </ion-item>
-  </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
