@@ -2,6 +2,9 @@ language: android
 
 sudo: false
 
+notifications:
+  email: false
+
 env:
   global:
     - ANDROID_API=26
@@ -29,6 +32,7 @@ jdk:
 script:
   - npm i
   - ionic cordova build android --minifyjs --minifycss --optimizejs --prod --release
+  - ionic cordova build browser -minifyjs --minifycss --optimizejs --prod --release
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -46,7 +50,7 @@ cache:
     - "node_modules"
 
 deploy:
-  provider: releases
+  - provider: releases
   skip_cleanup: true
   overwrite: true
   file_glob: true
@@ -57,3 +61,6 @@ deploy:
     repo: AndreVarandas/space-x-explorer
     tags: true
     all_branches: true
+  - provider: pages
+  keep-history: true
+  local_dir: www
