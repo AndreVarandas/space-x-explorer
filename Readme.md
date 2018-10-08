@@ -29,11 +29,16 @@ The challenge is to create a simple Ionic application to consume data from the a
 - Created an app and splash icon. This was easily done with `ionic cordova resources`. The cli will look for an icon and splash image in the `assets` folder and automatically generates resources for android and iOS.
 - Added caching for `core`, `capsules` and `dragons`.
 
-## Current status - Day three
+## Day Four
 
-Added future launches screen.
+- Added rocket and rocket detail and launchpad pages.
+- Improved styles for the future launches page.
 
-<img src="extra/day-3.gif" width="300" alt="application preview" />
+## Current status - Day four
+
+Added rocket details, improved future launches page.
+
+<img src="extra/day-4.gif" width="300" alt="application preview" />
 
 ---
 
