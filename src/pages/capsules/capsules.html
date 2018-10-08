@@ -15,12 +15,11 @@
 
 <ion-content>
   <ion-searchbar (ionInput)="onSearchBarInput($event)"></ion-searchbar>
-  <ion-list>
-    <button ion-item *ngFor="let capsule of capsules" (click)="capsuleTapped($event, capsule)">
+  <ion-list no-lines>
+    <button ion-item *ngFor="let capsule of searchableCapsules" (click)="capsuleTapped($event, capsule)">
       <h2>{{capsule.capsule_serial}} - {{ capsule.capsule_id }}</h2>
-      <p>
-        {{capsule.details}}
-      </p>
+      <p item-end>{{ capsule.status }}</p>
+      <p>{{capsule.details}}</p>
     </button>
   </ion-list>
 </ion-content>
