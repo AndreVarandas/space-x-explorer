@@ -33,6 +33,8 @@ The challenge is to create a simple Ionic application to consume data from the a
 
 - Added rocket and rocket detail and launchpad pages.
 - Improved styles for the future launches page.
+- Added pages deploy support to travis CI. Meaning that travis will now also build for the web and deploy it using the github pages, creating the webapp at [https://andrevarandas.github.io/space-x-explorer/](https://andrevarandas.github.io/space-x-explorer/).
+- Did some minor improvements to core, capsules and corresponding details pages.
 
 ## Current status - Day four
 
