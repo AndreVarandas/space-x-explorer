@@ -1,6 +1,7 @@
 # SpaceX Explorer
 
 [![Build Status](https://travis-ci.com/AndreVarandas/space-x-explorer.svg?branch=master)](https://travis-ci.com/AndreVarandas/space-x-explorer)
+![logo-2.jpg](https://github.com/candyskull920/space-x-explorer/blob/master/resources/logo-2.jpg?raw=true)
 
 The challenge is to create a simple Ionic application to consume data from the awesome SpaceX api in 7 days.
 
