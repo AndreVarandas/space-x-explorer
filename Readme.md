@@ -37,7 +37,12 @@ The challenge is to create a simple Ionic application to consume data from the a
 - Added pages deploy support to travis CI. Meaning that travis will now also build for the web and deploy it using the github pages, creating the webapp at [https://andrevarandas.github.io/space-x-explorer/](https://andrevarandas.github.io/space-x-explorer/).
 - Did some minor improvements to core, capsules and corresponding details pages.
 
-## Current status - Day four
+## Day five
+
+- We got a new logo! Thanks to [Candy Skull](https://github.com/candyskull920) for the awesome work.
+- Working on custom cordova plugin to be able to set both the wallpaper and lock screen images, that shoudl work at least for android - struggling with the current outdated docs and tutorials.
+
+## Current status - Day five
 
 Added rocket details, improved future launches page.
 
