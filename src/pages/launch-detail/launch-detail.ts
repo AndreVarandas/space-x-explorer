@@ -33,11 +33,10 @@ export class LaunchDetailPage {
     private toastCtrl: ToastController,
     public navParams: NavParams) {
 
-    // this.isAndroid = this.platform.is('android') &&
-    //   !this.platform.is('core') &&
-    //   !this.platform.is('mobileweb');
+    this.isAndroid = this.platform.is('android') &&
+      !this.platform.is('core') &&
+      !this.platform.is('mobileweb');
 
-    this.isAndroid = true;
     this.launch = this.navParams.get('launch');
   }
 
