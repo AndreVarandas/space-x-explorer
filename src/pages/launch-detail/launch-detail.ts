@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Platform, NavParams, ToastController, Toast, LoadingController, Loading, FabContainer } from 'ionic-angular';
+import { IonicPage, NavController, Platform, NavParams, ToastController, FabContainer } from 'ionic-angular';
 
 import { Launch } from '../../models/Launch';
 
