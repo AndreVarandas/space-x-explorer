@@ -40,6 +40,12 @@ export class LaunchDetailPage {
     this.launch = this.navParams.get('launch');
   }
 
+  goToRocketDetail(event, rocketId) {
+    this.navCtrl.push('RocketDetailsPage', {
+      rocketId: rocketId
+    });
+  }
+
   onSuccess() {
     const toast = this.toastCtrl.create({
       duration: 3000,

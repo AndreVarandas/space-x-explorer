@@ -4,6 +4,7 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 
 import { Rocket } from '../../models/Rocket';
 import { HomePage } from '../home/home';
+import { SpaceXProvider } from '../../providers/space-x/space-x';
 
 /**
  * Generated class for the RocketDetailsPage page.
@@ -23,12 +24,21 @@ export class RocketDetailsPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    private spaceXProvider: SpaceXProvider,
     private iab: InAppBrowser) {
 
     this.rocket = this.navParams.get('rocket');
+
     if (!this.rocket) {
-      this.navCtrl.setRoot(HomePage);
-      this.navCtrl.popToRoot();
+      const rocketId = this.navParams.get('rocketId');
+
+      if (!rocketId) {
+        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.popToRoot();
+      }
+
+      this.spaceXProvider.getRocket(rocketId)
+        .subscribe((rocket) => this.rocket = rocket);
     }
 
   }

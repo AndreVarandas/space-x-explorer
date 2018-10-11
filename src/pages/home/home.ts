@@ -26,9 +26,10 @@ export class HomePage {
       .subscribe((launches) => this.launches = this.filterLaunchesWithMedia(launches));
   }
 
-  // Kepp all the launches with media
+  // Kepp all the launches with media, ordered by the most recent
   filterLaunchesWithMedia(launches: Array<Launch>) {
-    return launches.filter(launch => launch.links.flickr_images.length > 0);
+    return launches.filter(launch => launch.links.flickr_images.length > 0)
+      .sort((a, b) => b.flight_number - a.flight_number);
   }
 
   launchTapped(event, launch) {

@@ -33,6 +33,14 @@
     <p>{{ launch.details }}</p>
   </div>
 
+  <ion-grid *ngIf="launch.rocket.rocket_id">
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button small (click)="goToRocketDetail($event, launch.rocket.rocket_id)">{{ launch.rocket.rocket_name }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <ion-grid *ngIf="launch.links.flickr_images.length > 1">
     <h3 padding>Photo Gallery</h3>
     <ion-row>
