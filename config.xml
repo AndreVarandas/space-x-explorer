@@ -88,4 +88,5 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-wputils" spec="https://github.com/AndreVarandas/cordova-plugin-wallpaper" />
 </widget>

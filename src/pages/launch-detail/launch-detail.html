@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content>
   <div class="launch-highlight">
     <img src={{launch.links.flickr_images[0]}} alt="">
@@ -34,11 +33,34 @@
     <p>{{ launch.details }}</p>
   </div>
 
-  <ion-grid padding *ngIf="launch.links.flickr_images.length > 1">
+  <ion-grid *ngIf="launch.links.flickr_images.length > 1">
     <h3>Photo Gallery</h3>
     <ion-row>
       <ion-col col-12 *ngFor="let flickerImg of launch.links.flickr_images">
-        <img src={{flickerImg}} alt="">
+        <div class="launch-detail-img">
+          <img src={{flickerImg}} alt="">
+          <ion-row class="launch-detail-img-tools" *ngIf="isAndroid">
+            <ion-fab bottom right edge #fab>
+              <button ion-fab mini>
+                <ion-icon name="add"></ion-icon>
+              </button>
+              <ion-fab-list>
+                <button ion-fab (click)="setWallpaperImage($event, flickerImg, fab)">
+                  <ion-icon name="color-palette"></ion-icon>
+                  <ion-label>Set Wallpaper</ion-label>
+                </button>
+                <button ion-fab (click)="setLockScreenImage($event, flickerImg, fab)">
+                  <ion-icon name="lock"></ion-icon>
+                  <ion-label>Set Lock Screen</ion-label>
+                </button>
+                <button ion-fab (click)="setLockScreenAndWallpaperImage($event, flickerImg, fab)">
+                  <ion-icon name="copy"></ion-icon>
+                  <ion-label>Set Lock Screen and home</ion-label>
+                </button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-row>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
