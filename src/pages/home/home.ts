@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Cache } from 'ionic-cache-observable';
+import { CacheService } from 'ionic-cache-observable';
+import { Observable } from 'rxjs/Observable';
 
 import { SpaceXProvider } from '../../providers/space-x/space-x';
 import { Launch } from '../../models/Launch';
-import { CacheService } from 'ionic-cache-observable';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-home',
