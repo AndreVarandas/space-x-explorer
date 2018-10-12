@@ -40,15 +40,15 @@ The challenge is to create a simple Ionic application to consume data from the a
 ## Day five
 
 - We got a new logo! Thanks to [Candy Skull](https://github.com/candyskull920) for the awesome work.
-- Working on custom cordova plugin to be able to set both the wallpaper and lock screen images, that shoudl work at least for android - struggling with the current outdated docs and tutorials.
+- Working on custom cordova plugin to be able to set both the wallpaper and lock screen images, that should work at least for android - struggling with the current outdated docs and tutorials.
 
 ## Day six
 
-- Finished the [cordova plugin](https://github.com/AndreVarandas/cordova-plugin-wallpaper) TO manage home and lock Screen wallpapers. I am now able to set a home wallpaper/lock screen with a simple image url.
-- Reversed order from launches list (now shows from the most recent).
+- Finished the [cordova plugin](https://github.com/AndreVarandas/cordova-plugin-wallpaper) to manage home and lock Screen wallpapers. I am now able to set a home wallpaper/lock screen with a simple image url.
+- Reversed order from launches list (now shows the top most recent).
 - Minor style tweaks. (Home and launch-detail)
 
-## Current status - Day siz
+## Current status - Day six
 
 Added rocket details, improved future launches page.
 
