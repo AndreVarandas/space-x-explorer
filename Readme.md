@@ -92,4 +92,8 @@ echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/27.0.3/" >> ~/.zshrc 
 
 ---
 
+### Postmortem
+
+Working with Nodejs 12.22.12
+
 [LICENSE - GPLv3 - André Varandas](LICENSE)
