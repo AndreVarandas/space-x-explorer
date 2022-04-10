@@ -96,4 +96,10 @@ echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/27.0.3/" >> ~/.zshrc 
 
 Working with Nodejs 12.22.12
 
+- Build app bundle instead with: (APK's are no longer supported)
+
+```bash	
+ionic cordova build android --ks path/to/keystore.jks --prod --release --minifyjs --minifycss --optimizejs -- -- --packageType=bundle
+```
+
 [LICENSE - GPLv3 - André Varandas](LICENSE)
