@@ -6,7 +6,6 @@ import { CacheModule } from "ionic-cache-observable";
 
 import { MyApp } from "./app.component";
 import { StatusBar } from "@ionic-native/status-bar";
-import { SplashScreen } from "@ionic-native/splash-screen";
 import { HttpModule } from "@angular/http";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 
@@ -26,7 +25,6 @@ import { SpaceXProvider } from "../providers/space-x/space-x";
   entryComponents: [MyApp, HomePage],
   providers: [
     StatusBar,
-    SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SpaceXProvider,
     InAppBrowser,

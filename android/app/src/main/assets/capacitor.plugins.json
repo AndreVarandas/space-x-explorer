@@ -1,0 +1,10 @@
+[
+	{
+		"pkg": "@admob-plus/capacitor",
+		"classpath": "admob.plus.capacitor.AdMobPlusPlugin"
+	},
+	{
+		"pkg": "@capacitor/splash-screen",
+		"classpath": "com.capacitorjs.plugins.splashscreen.SplashScreenPlugin"
+	}
+]
